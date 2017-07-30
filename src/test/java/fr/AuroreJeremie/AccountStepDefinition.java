@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import cucumber.api.java8.En;
-import fr.AuroreJeremie.Model.CheckingAccount;
+import fr.AuroreJeremie.Domain.CheckingAccount;
 import fr.AuroreJeremie.Service.ConsolePrinter;
 
 public class AccountStepDefinition implements En {

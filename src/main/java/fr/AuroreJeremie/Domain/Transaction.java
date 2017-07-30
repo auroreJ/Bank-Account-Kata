@@ -1,9 +1,7 @@
-package fr.AuroreJeremie.Model;
+package fr.AuroreJeremie.Domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
-import fr.AuroreJeremie.Enum.TransactionType;
 
 /**
  * Representation of a transaction

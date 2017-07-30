@@ -1,4 +1,4 @@
-package fr.AuroreJeremie.Model;
+package fr.AuroreJeremie.Domain;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;

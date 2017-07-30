@@ -1,4 +1,4 @@
-package fr.AuroreJeremie.Enum;
+package fr.AuroreJeremie.Domain;
 
 /**
  * Differents type of transactions
