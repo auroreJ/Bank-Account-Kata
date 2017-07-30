@@ -18,4 +18,11 @@ public interface Account {
 	 */
 	void makeDeposit(BigDecimal amount, LocalDateTime date);
 
+	/**
+	 * make a withdrawal in account
+	 * 
+	 * @param amount
+	 *            for the withdrawal
+	 */
+	void makeWithdrawal(BigDecimal amount, LocalDateTime date);
 }

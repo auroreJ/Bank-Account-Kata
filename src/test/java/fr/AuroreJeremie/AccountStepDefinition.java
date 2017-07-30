@@ -22,9 +22,13 @@ public class AccountStepDefinition implements En {
 			account.makeDeposit(amount, LocalDateTime.now());
 		});
 
-		Then("My balance should be (\\d+)", (BigDecimal expectedBalance) -> {
-			assertThat(account.getTransactionsHistory().get(0).getBalance())
-					.isEqualByComparingTo(expectedBalance);
+		When("^I make a withdrawal of (\\d+) euro in my account$", (BigDecimal amount) -> {
+			account.makeWithdrawal(amount, LocalDateTime.of(2017, 06, 25, 14, 30));
+		});
+
+		Then("^My balance should be (-?\\d+)$",(BigDecimal expectedBalance) -> {
+			assertThat(account.getTransactionsHistory().get(0)
+							.getBalance()).isEqualByComparingTo(expectedBalance);
 		});
 	}
 }

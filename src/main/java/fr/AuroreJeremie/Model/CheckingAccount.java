@@ -28,11 +28,17 @@ public class CheckingAccount implements Account {
 				TransactionType.DEPOSIT, amount, date), balance));
 	}
 
-	private BigDecimal getBalanceForTransaction(
-			TransactionType typeTransaction, BigDecimal amount) {
+	@Override
+	public void makeWithdrawal(BigDecimal amount, LocalDateTime date) {
+		BigDecimal balance = getBalanceForTransaction(TransactionType.WITHDRAWAL, amount);
+		transactionsHistory.add(new TransactionHistory(new Transaction(
+				TransactionType.WITHDRAWAL, amount, date), balance));
+	}
+
+	private BigDecimal getBalanceForTransaction(TransactionType typeTransaction, BigDecimal amount) {
 		return transactionsHistory.isEmpty() ? toBalance(typeTransaction,amount) 
-				: (transactionsHistory.get(transactionsHistory.size() - 1).getBalance()
-						.add(toBalance(typeTransaction, amount)));
+					: (transactionsHistory.get(transactionsHistory.size() - 1).getBalance()
+							.add(toBalance(typeTransaction, amount)));
 	}
 
 	private BigDecimal toBalance(TransactionType typeTransaction, BigDecimal amount) {
@@ -46,7 +52,8 @@ public class CheckingAccount implements Account {
 		return transactionsHistory;
 	}
 
-	public void setTransactionsHistory(List<TransactionHistory> transactionsHistory) {
+	public void setTransactionsHistory(
+			List<TransactionHistory> transactionsHistory) {
 		this.transactionsHistory = transactionsHistory;
 	}
 
