@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.AuroreJeremie.Enum.TransactionType;
+import fr.AuroreJeremie.Service.Printer;
 
 /**
  * Representation of a checking account
@@ -46,6 +47,14 @@ public class CheckingAccount implements Account {
 			return amount.negate();
 		}
 		return amount;
+	}
+
+	/**
+	 * Print an account
+	 * @param printer
+	 */
+	public void print(Printer printer) {
+		transactionsHistory.forEach(th -> printer.printLn(th.toString()));
 	}
 
 	public List<TransactionHistory> getTransactionsHistory() {
