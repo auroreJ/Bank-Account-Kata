@@ -9,14 +9,11 @@ import java.time.LocalDateTime;
  * @author ajeremie
  *
  */
-public class Transaction {
+public final class Transaction {
 
-	private TransactionType type;
-	private BigDecimal amount;
-	private LocalDateTime date;
-
-	public Transaction() {
-	}
+	private final TransactionType type;
+	private final BigDecimal amount;
+	private final LocalDateTime date;
 
 	public Transaction(TransactionType type, BigDecimal amount,
 			LocalDateTime date) {

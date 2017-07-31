@@ -8,11 +8,11 @@ import java.time.format.DateTimeFormatter;
  * @author AURORE
  *
  */
-public class TransactionHistory {
+public final class TransactionHistory {
 
 	private static final String PATTERN = "yyyy/MM/dd";
-	private Transaction transaction;
-	private BigDecimal balance;
+	private final Transaction transaction;
+	private final BigDecimal balance;
 
 	public TransactionHistory(Transaction transaction, BigDecimal balance) {
 		this.transaction = transaction;
